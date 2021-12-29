@@ -1,0 +1,2 @@
+class Todoo < ApplicationRecord
+end
