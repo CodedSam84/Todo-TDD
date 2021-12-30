@@ -1,4 +1,6 @@
 class TodoosController < ApplicationController
+  before_action :authenticate
+  
   def index
     @todoos = Todoo.all
   end
