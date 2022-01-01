@@ -26,6 +26,7 @@ end
 
 group :test do
   gem 'capybara', '~> 3.36'
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
