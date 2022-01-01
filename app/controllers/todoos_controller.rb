@@ -2,7 +2,7 @@ class TodoosController < ApplicationController
   before_action :authenticate
 
   def index
-    @todoos = Todoo.where(email: current_user_email)
+    @todoos = current_user.todoos
   end
 
   def new
@@ -10,7 +10,7 @@ class TodoosController < ApplicationController
   end
 
   def create
-    @todoo = Todoo.create(todoo_params.merge(email: current_user_email))
+    @todoo = current_user.todoos.create(todoo_params)
     redirect_to todoos_path
   end
 
