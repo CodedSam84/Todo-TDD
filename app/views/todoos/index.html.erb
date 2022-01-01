@@ -2,7 +2,10 @@
 
 <ul class="todo">
   <%= @todoos.each do |t| %>
-    <li><%= t.title %></li>
+    <li class="<%= "completed" if t.completed? %>">
+    <%= t.title %>
+    <%= link_to "Mark complete", todoo_completion_path(t.id), method: :post %>
+    </li>
   <% end %>
 </ul>
 
